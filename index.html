@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这只是一个网站</title>
+    <link rel="stylesheet" href="./ys/style.css">
+</head>
+
+<body>
+    <div class="load">
+        <img src="./ys/OP_s.png">
+    </div>
+    <audio id="myAudio" src="./ys/OPGo.mp3"></audio>
+
+    <script src="https://cdn.staticfile.org/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script>
+        const openRandomBilibiliVideo = () => {
+            const bilibiliVideos = [
+                'https://www.bilibili.com/video/BV1bm4y137pb/?spm_id_from=333.337.search-card.all.click&vd_source=ad9af5524d48f1cc5de7d2cdd61b053b',
+                'https://www.bilibili.com/video/BV1Wy4y1i7AL/?spm_id_from=333.999.0.0',
+                'https://www.bilibili.com/video/BV1Dp4y1H7RE/?spm_id_from=333.999.0.0',
+                'https://www.bilibili.com/video/BV1Qg411L7pn/?spm_id_from=333.999.0.0',
+                'https://www.bilibili.com/video/BV1e64y1r7Fb/?spm_id_from=333.999.0.0',
+                'https://www.bilibili.com/video/BV1cr4y1C7MN/?spm_id_from=333.999.0.0',
+                'https://www.bilibili.com/video/BV1hS4y1f7cq/?spm_id_from=333.999.0.0',
+                'https://www.bilibili.com/video/BV1UP4y1A7uQ/?spm_id_from=333.999.0.0',
+                'https://www.bilibili.com/video/BV1nY411A7Wk/?spm_id_from=333.999.0.0',
+                'https://www.bilibili.com/video/BV11W4y167gc/?spm_id_from=333.999.0.0',
+                'https://www.bilibili.com/video/BV1fd4y1B7rs/?spm_id_from=333.999.0.0',
+                'https://www.bilibili.com/video/BV1nh411M7S3/?spm_id_from=333.999.0.0'
+            ];
+
+            const randomIndex = Math.floor(Math.random() * bilibiliVideos.length);
+            window.location.href = bilibiliVideos[randomIndex];
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('myAudio');
+            const load = document.querySelector('.load');
+
+            swal({
+                title: '',
+                text: '你为什么要点进来',
+                icon: 'warning',
+                button: '我天生反骨',
+                closeOnClickOutside: false,
+            }).then(() => {
+                document.body.addEventListener('click', () => {
+                    load.classList.add('activate');
+                    audio.play();
+                });
+            });
+
+            audio.addEventListener('ended', () => {
+                document.body.addEventListener('click', openRandomBilibiliVideo);
+            });
+        });
+    </script>
+</body>
+
+</html>
