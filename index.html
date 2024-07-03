@@ -30,7 +30,7 @@
                 'https://www.bilibili.com/video/BV11W4y167gc/?spm_id_from=333.999.0.0',
                 'https://www.bilibili.com/video/BV1fd4y1B7rs/?spm_id_from=333.999.0.0',
                 'https://www.bilibili.com/video/BV1nh411M7S3/?spm_id_from=333.999.0.0',
-	'https://www.bilibili.com/video/BV181421973u/?spm_id_from=333.999.0.0'
+	            'https://www.bilibili.com/video/BV181421973u/?spm_id_from=333.999.0.0'
             ];
 
             const randomIndex = Math.floor(Math.random() * bilibiliVideos.length);
@@ -43,9 +43,9 @@
 
             swal({
                 title: '',
-                text: '你为什么要点进来',
+                text: '欢迎来到学习网站',
                 icon: 'warning',
-                button: '我天生反骨',
+                button: '点击此按钮进入',
                 closeOnClickOutside: false,
             }).then(() => {
                 document.body.addEventListener('click', () => {
