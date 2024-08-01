@@ -14,7 +14,6 @@
     </div>
     <audio id="myAudio" src="./ys/OPGo.mp3"></audio>
 
-
     <script src="https://cdn.staticfile.org/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script>
         const openRandomBilibiliVideo = () => {
@@ -31,7 +30,7 @@
                 'https://www.bilibili.com/video/BV11W4y167gc/?spm_id_from=333.999.0.0',
                 'https://www.bilibili.com/video/BV1fd4y1B7rs/?spm_id_from=333.999.0.0',
                 'https://www.bilibili.com/video/BV1nh411M7S3/?spm_id_from=333.999.0.0',
-	            'https://www.bilibili.com/video/BV181421973u/?spm_id_from=333.999.0.0'
+                'https://www.bilibili.com/video/BV181421973u/?spm_id_from=333.999.0.0'
             ];
 
             const randomIndex = Math.floor(Math.random() * bilibiliVideos.length);
@@ -56,7 +55,7 @@
             });
 
             audio.addEventListener('ended', () => {
-                document.body.addEventListener('click', openRandomBilibiliVideo);
+                openRandomBilibiliVideo(); // 当音频播放结束后直接调用打开Bilibili视频的函数
             });
         });
     </script>
